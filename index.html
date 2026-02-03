@@ -1,36 +1,20 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.container {
-    background: white;
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+    <div class="container">
+        <h2>Password Generator</h2>
+        <input type="text" id="passwordDisplay" readonly placeholder="Click Generate">
+        <button id="generateBtn">Generate Password</button>
+        <button id="copyBtn" class="copy-btn">Copy to Clipboard</button>
+    </div>
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-button {
-    padding: 10px;
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
+    <script src="script.js"></script>
+</body>
+</html>
