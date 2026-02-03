@@ -1,19 +1,53 @@
-function generatePassword() {
-    const length = document.getElementById("length").value;
-    const passwordField = document.getElementById("password");
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
-    let password = "";
+.container {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-    if (length < 4) {
-        alert("Password length should be at least 4");
-        return;
-    }
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
 
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        password += characters[randomIndex];
-    }
+button {
+    padding: 12px;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+}
 
-    passwordField.value = password;
+button:hover {
+    background-color: #45a049;
+}
+
+.copy-btn {
+    background-color: #008CBA;
+}
+
+.copy-btn:hover {
+    background-color: #007ba8;
 }
