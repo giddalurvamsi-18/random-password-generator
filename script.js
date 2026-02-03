@@ -1,19 +1,27 @@
+const passwordDisplay = document.getElementById('passwordDisplay');
+const generateBtn = document.getElementById('generateBtn');
+const copyBtn = document.getElementById('copyBtn');
+
 function generatePassword() {
-    const length = document.getElementById("length").value;
-    const passwordField = document.getElementById("password");
-
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+    const length = 14;
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
     let password = "";
-
-    if (length < 4) {
-        alert("Password length should be at least 4");
-        return;
-    }
-
+    
     for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        password += characters[randomIndex];
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
     }
-
-    passwordField.value = password;
+    passwordDisplay.value = password;
 }
+
+function copyPassword() {
+    if (passwordDisplay.value === "") return;
+    
+    passwordDisplay.select();
+    navigator.clipboard.writeText(passwordDisplay.value);
+    alert("Password copied!");
+}
+
+// Attach events to buttons
+generateBtn.addEventListener('click', generatePassword);
+copyBtn.addEventListener('click', copyPassword);
